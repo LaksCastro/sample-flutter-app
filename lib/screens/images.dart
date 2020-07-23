@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:sample_flutter_app/components/layout/main.dart';
 
-import 'package:sample_flutter_app/models/ScreenData/main.dart';
-import 'package:sample_flutter_app/models/RouteData/main.dart';
+import 'package:sample_flutter_app/models/screen_data/main.dart';
+import 'package:sample_flutter_app/models/route_data/main.dart';
 
 class ImagesScreen extends StatelessWidget {
   static final RouteDataModel route = RouteDataModel(

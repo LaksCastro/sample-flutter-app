@@ -1,4 +1,4 @@
-import "package:sample_flutter_app/models/RouteData/main.dart";
+import "package:sample_flutter_app/models/route_data/main.dart";
 
 import "package:sample_flutter_app/screens/home.dart";
 import "package:sample_flutter_app/screens/images.dart";

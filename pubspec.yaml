@@ -1,5 +1,5 @@
 name: sample_flutter_app
-description: A new Flutter project.
+description: "A sample mobile app using Flutter, with some features: pinterest grid, routes, push named routes with context, drawer, horizontal cards and consuming the Unsplash Rest API for non-mocked data and more."
 
 publish_to: "none"
 

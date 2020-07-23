@@ -1,6 +1,6 @@
 import "package:sample_flutter_app/constants/routes/wrapper.dart";
 
-import 'package:sample_flutter_app/models/RouteData/main.dart';
+import 'package:sample_flutter_app/models/route_data/main.dart';
 
 class TabsRoutes {
   static Map<String, RouteDataModel> getTabs() {

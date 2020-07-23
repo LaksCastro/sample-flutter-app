@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import 'package:sample_flutter_app/models/ScreenData/main.dart';
+import 'package:sample_flutter_app/models/screen_data/main.dart';
 
 import 'package:sample_flutter_app/components/drawer/main.dart';
 

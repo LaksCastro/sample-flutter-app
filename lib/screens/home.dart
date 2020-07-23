@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sample_flutter_app/components/HomeCardWrapper/main.dart';
-import 'package:sample_flutter_app/components/HomeCard/main.dart';
+
+import 'package:sample_flutter_app/components/home_card_wrapper/main.dart';
+import 'package:sample_flutter_app/components/home_card/main.dart';
 
 import 'package:sample_flutter_app/components/layout/main.dart';
-import 'package:sample_flutter_app/models/RouteData/main.dart';
 
-import 'package:sample_flutter_app/models/ScreenData/main.dart';
+import 'package:sample_flutter_app/constants/home_screen/main.dart';
+
+import 'package:sample_flutter_app/models/route_data/main.dart';
+import 'package:sample_flutter_app/models/screen_data/main.dart';
 
 class HomeScreen extends StatelessWidget {
   static final RouteDataModel route = RouteDataModel(
@@ -20,42 +23,40 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> teste = [];
+    List<Widget> listViewContainer = [];
 
-    List.generate(20, (index) {
-      teste.add(Container(
+    for (int i = 0; i < homeCards.length; i++) {
+      List<HomeCardInfo> elements = homeCards[i];
+
+      List<Widget> cards = [];
+
+      for (int j = 0; j < elements.length; j++) {
+        HomeCardInfo element = elements[j];
+        cards.add(Container(
+          width: size,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadiusDirectional.circular(10),
+              color: Colors.red),
+          child: Text(element.title),
+          margin: EdgeInsets.symmetric(horizontal: 10),
+        ));
+      }
+
+      listViewContainer.add(Container(
           height: size,
           child: ListView(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            // This next line does the trick.
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
             scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Container(
-                width: size,
-                color: Colors.red,
-              ),
-              Container(
-                width: size,
-                color: Colors.blue,
-              ),
-              Container(
-                width: size,
-                color: Colors.green,
-              ),
-              Container(
-                width: size,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: size,
-                color: Colors.orange,
-              ),
-            ],
+            children: cards,
           )));
-    });
+    }
 
     return LayoutComponent(ScreenDataModel(
-        appBarTitle: HomeScreen.route.name, body: ListView(children: teste)));
+        appBarTitle: HomeScreen.route.name,
+        body: ListView(
+          children: listViewContainer,
+          padding: EdgeInsets.symmetric(vertical: 10),
+        )));
   }
 }
 

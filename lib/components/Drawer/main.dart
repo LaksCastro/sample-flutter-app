@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
 import "package:sample_flutter_app/constants/routes/tabs.dart";
-import 'package:sample_flutter_app/models/RouteData/main.dart';
+import 'package:sample_flutter_app/models/route_data/main.dart';
 
 class DrawerComponent extends StatelessWidget {
   @override
