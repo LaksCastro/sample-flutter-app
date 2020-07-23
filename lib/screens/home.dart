@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       builderFunction: (context) => HomeScreen(),
       icon: Icons.home);
 
-  final double size = 250.0;
+  final double size = 150.0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +32,18 @@ class HomeScreen extends StatelessWidget {
 
       for (int j = 0; j < elements.length; j++) {
         HomeCardInfo element = elements[j];
-        cards.add(Container(
-          width: size,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadiusDirectional.circular(10),
-              color: Colors.red),
-          child: Text(element.title),
-          margin: EdgeInsets.symmetric(horizontal: 10),
-        ));
+        cards.add(GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "/images", arguments: element);
+            },
+            child: Container(
+              width: size,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.circular(5),
+                  color: Colors.red),
+              child: Text(element.title),
+              margin: EdgeInsets.symmetric(horizontal: 10),
+            )));
       }
 
       listViewContainer.add(Container(

@@ -27,13 +27,16 @@ class DrawerComponent extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
         ),
-        child: Text(
-          'Drawer Header',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),
-        ),
+        child: Container(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            alignment: Alignment.bottomLeft,
+            child: Text(
+              'Drawer Header',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+              ),
+            )),
       ),
     ];
 
