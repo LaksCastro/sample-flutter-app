@@ -21,7 +21,7 @@ class SampleFlutterApp extends StatelessWidget {
       theme: AppTheme.data,
       darkTheme: AppDarkTheme.data,
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      routes: AppRoutes.getRoutes(),
       debugShowCheckedModeBanner: false,
     );
   }
