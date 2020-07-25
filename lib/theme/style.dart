@@ -12,11 +12,11 @@ class AppTheme {
       primaryColor: AppTheme.primaryColor,
       accentColor: AppTheme.accentColor,
       secondaryHeaderColor: AppTheme.secondaryHeaderColor,
-      visualDensity: AppTheme.visualDensity);
+      visualDensity: AppTheme.visualDensity,
+      fontFamily: "Raleway");
 }
 
 class AppDarkTheme {
-  static final ThemeData data = ThemeData(
-    brightness: Brightness.dark,
-  );
+  static final ThemeData data =
+      ThemeData(brightness: Brightness.dark, fontFamily: "Raleway");
 }

@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:sample_flutter_app/components/home_card_wrapper/main.dart';
 import 'package:sample_flutter_app/components/home_card/main.dart';
 
+import 'package:outline_material_icons/outline_material_icons.dart';
+
 import 'package:sample_flutter_app/components/layout/main.dart';
 
 import 'package:sample_flutter_app/constants/home_screen/main.dart';
 
 import 'package:sample_flutter_app/models/route_data/main.dart';
 import 'package:sample_flutter_app/models/screen_data/main.dart';
+
+const url =
+    "https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
 
 class HomeScreen extends StatelessWidget {
   static final RouteDataModel route = RouteDataModel(
@@ -17,7 +22,7 @@ class HomeScreen extends StatelessWidget {
       key: "home",
       description: "The App Home Screen",
       builderFunction: (context) => HomeScreen(),
-      icon: Icons.home);
+      icon: OMIcons.home);
 
   final double size = 150.0;
 
@@ -37,31 +42,75 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(context, "/images", arguments: element);
             },
             child: Container(
-              width: size,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(5),
-                  color: Colors.red),
-              child: Text(element.title),
               margin: EdgeInsets.symmetric(horizontal: 10),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Stack(children: [
+                    Container(
+                        width: size,
+                        height: size,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: FittedBox(
+                          child: Image.network(url),
+                          fit: BoxFit.cover,
+                        )),
+                    Opacity(
+                      opacity: 0.5,
+                      child: Container(
+                        width: size,
+                        height: size,
+                        decoration: BoxDecoration(color: Colors.black),
+                      ),
+                    ),
+                    Container(
+                        alignment: Alignment.bottomLeft,
+                        width: size,
+                        height: size,
+                        padding: EdgeInsets.all(20),
+                        child: Text(element.title,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            )))
+                  ])),
             )));
       }
 
+// Stack(children: [
+//                   Text(element.title,
+//                       style:
+//                           TextStyle(fontSize: 14, fontWeight: FontWeight.bold))
+//                 ])
+
       listViewContainer.add(Container(
-          height: size,
-          child: ListView(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            scrollDirection: Axis.horizontal,
-            children: cards,
-          )));
+          padding: EdgeInsets.symmetric(vertical: 20),
+          margin: EdgeInsets.symmetric(vertical: 20),
+          decoration: BoxDecoration(),
+          child: Column(children: [
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.only(bottom: 10),
+                alignment: Alignment.topLeft,
+                child: Text("SIM CARALHO",
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+            Container(
+                height: size,
+                child: ListView(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  scrollDirection: Axis.horizontal,
+                  children: cards,
+                ))
+          ])));
     }
 
     return LayoutComponent(ScreenDataModel(
         appBarTitle: HomeScreen.route.name,
-        body: ListView(
-          children: listViewContainer,
-          padding: EdgeInsets.symmetric(vertical: 10),
-        )));
+        body: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: Column(
+              children: listViewContainer,
+            ))));
   }
 }
-
-// Container(height: 100, color: Colors.red)

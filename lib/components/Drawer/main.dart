@@ -16,6 +16,7 @@ class DrawerComponent extends StatelessWidget {
       tabsWidgets.add(ListTile(
         leading: Icon(tab.icon),
         title: Text(tab.name),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20),
         onTap: () {
           Navigator.pushReplacementNamed(context, tab.path);
         },
@@ -23,27 +24,22 @@ class DrawerComponent extends StatelessWidget {
     });
 
     List<StatelessWidget> children = [
-      DrawerHeader(
-        decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
+      ListTile(
+        title: Text(
+          "Sample App",
+          style: TextStyle(
+              fontFamily: "DancingScript",
+              fontSize: 32,
+              fontWeight: FontWeight.bold),
         ),
-        child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              'Drawer Header',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
-            )),
-      ),
+      )
     ];
 
     children.addAll(tabsWidgets);
 
     return Drawer(
-      child: ListView(padding: EdgeInsets.zero, children: children),
+      child: SafeArea(
+          child: ListView(padding: EdgeInsets.zero, children: children)),
     );
   }
 }

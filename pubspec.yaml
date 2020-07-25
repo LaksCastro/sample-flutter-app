@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.3
+  outline_material_icons: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -20,3 +21,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: DancingScript
+      fonts:
+        - asset: fonts/DancingScript-Regular.ttf
+        - asset: fonts/DancingScript-Bold.ttf
+          weight: 700
+    - family: Lato
+      fonts:
+        - asset: fonts/Lato-Regular.ttf
+        - asset: fonts/Lato-Bold.ttf
+          weight: 700
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway-Regular.ttf
+        - asset: fonts/Raleway-Bold.ttf
+          weight: 700

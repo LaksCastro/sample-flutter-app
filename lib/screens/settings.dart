@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:outline_material_icons/outline_material_icons.dart';
 
 import 'package:sample_flutter_app/components/layout/main.dart';
 
@@ -12,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
       key: "settings",
       description: "The Settings App Screen",
       builderFunction: (context) => SettingsScreen(),
-      icon: Icons.settings);
+      icon: OMIcons.settings);
 
   @override
   Widget build(BuildContext context) {
