@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sample_flutter_app/screens/home.dart';
 
 // APP THEME
 import "package:sample_flutter_app/theme/style.dart";
-
-// ROUTES
-import "package:sample_flutter_app/constants/routes/main.dart";
 
 // APP INFO
 import "package:sample_flutter_app/app_info.dart";
@@ -20,8 +18,7 @@ class SampleFlutterApp extends StatelessWidget {
       title: AppInfo.title,
       theme: AppTheme.data,
       darkTheme: AppDarkTheme.data,
-      initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.getRoutes(),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
