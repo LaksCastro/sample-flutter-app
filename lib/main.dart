@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sample_flutter_app/screens/home.dart';
 
+// ENVIROMENT VARIABLES
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 // APP THEME
 import "package:sample_flutter_app/theme/style.dart";
 
 // APP INFO
 import "package:sample_flutter_app/app_info.dart";
 
-void main() {
+void main() async {
+  await DotEnv().load('.env');
   runApp(SampleFlutterApp());
 }
 
