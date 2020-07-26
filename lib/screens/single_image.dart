@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:sample_flutter_app/components/layout/main.dart';
 
-import 'package:sample_flutter_app/models/route_data/main.dart';
 import 'package:sample_flutter_app/models/screen_data/main.dart';
 
 class SingleImageScreen extends StatelessWidget {

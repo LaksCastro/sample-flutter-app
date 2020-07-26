@@ -50,7 +50,7 @@ class DrawerSections {
             label: "Colorful",
             icon: OMIcons.localFlorist,
             builder: (context) => ImagesScreen(
-                args: ImagesScreenArgs(title: "Colorful", query: "colored"))),
+                args: ImagesScreenArgs(title: "Colorful", query: "colorful"))),
         _Tab(
             label: "Futurism",
             icon: OMIcons.timelapse,

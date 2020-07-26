@@ -6,9 +6,6 @@ import 'package:sample_flutter_app/constants/home_categories/main.dart';
 
 import 'package:sample_flutter_app/models/screen_data/main.dart';
 
-const url =
-    "https://images.unsplash.com/photo-1593642532744-d377ab507dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
-
 class HomeScreen extends StatelessWidget {
   final double size = 150.0;
 
@@ -47,7 +44,6 @@ class HomeScreen extends StatelessWidget {
       listViewContainer.add(Container(
           padding: EdgeInsets.symmetric(vertical: 20),
           margin: EdgeInsets.symmetric(vertical: 20),
-          color: Theme.of(context).hoverColor,
           child: Column(children: [
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),

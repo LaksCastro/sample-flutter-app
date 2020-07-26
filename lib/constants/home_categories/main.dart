@@ -21,7 +21,7 @@ class Categories {
         label: "Futurism",
         color: Colors.blue,
         builder: (context) => ImagesScreen(
-            args: ImagesScreenArgs(query: "fururism", title: "Futurism")),
+            args: ImagesScreenArgs(query: "futuristic", title: "Futurism")),
       ),
     ]),
     _Category(title: "Diverse", items: [
@@ -48,14 +48,14 @@ class Categories {
       _Item(
         label: "Cats",
         color: Colors.lightBlue[400],
-        builder: (context) => ImagesScreen(
-            args: ImagesScreenArgs(query: "people", title: "People")),
+        builder: (context) =>
+            ImagesScreen(args: ImagesScreenArgs(query: "cats", title: "Cats")),
       ),
       _Item(
         label: "Dogs",
         color: Colors.yellow,
-        builder: (context) => ImagesScreen(
-            args: ImagesScreenArgs(query: "nature", title: "Nature")),
+        builder: (context) =>
+            ImagesScreen(args: ImagesScreenArgs(query: "dogs", title: "Dogs")),
       ),
       _Item(
         label: "Cute",
