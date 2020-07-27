@@ -81,8 +81,8 @@ class _ImagesScreenState extends State<ImagesScreen> {
     }
   }
 
-  double getColumnsLength(double screenWidth) {
-    double columnsLength = 0;
+  int getColumnsLength(double screenWidth) {
+    int columnsLength = 0;
 
     Map<int, int> breakpoints = {
       1100: 7,
@@ -96,7 +96,7 @@ class _ImagesScreenState extends State<ImagesScreen> {
 
     breakpoints.forEach((key, value) {
       if (screenWidth > key && columnsLength == 0) {
-        columnsLength = value.toDouble();
+        columnsLength = value;
       }
     });
 
@@ -125,13 +125,13 @@ class _ImagesScreenState extends State<ImagesScreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double columnsLength = getColumnsLength(screenWidth);
+    int columnsLength = getColumnsLength(screenWidth);
 
     Widget body = initialLoad
         ? Center(child: CircularProgressIndicator())
         : (StaggeredGridView.count(
             controller: _controller,
-            crossAxisCount: columnsLength.toInt(),
+            crossAxisCount: columnsLength,
             children: List.generate(images.length, (int index) {
               return _Tile(image: images[index], columnsLength: columnsLength);
             }),
@@ -146,7 +146,7 @@ class _ImagesScreenState extends State<ImagesScreen> {
 
 class _Tile extends StatelessWidget {
   final ImageData image;
-  final double columnsLength;
+  final int columnsLength;
 
   _Tile({this.image, this.columnsLength});
 
