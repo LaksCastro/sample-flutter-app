@@ -3,16 +3,16 @@ import "package:flutter/material.dart";
 import 'package:sample_flutter_app/models/screen_data/main.dart';
 
 class NormalLayoutComponent extends StatelessWidget {
-  final ScreenDataModel data;
+  final ScreenDataModel args;
 
-  NormalLayoutComponent(this.data) : super();
+  NormalLayoutComponent({this.args}) : super();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(data.appBarTitle),
+          title: Text(args.appBarTitle),
         ),
-        body: data.body);
+        body: args.body);
   }
 }

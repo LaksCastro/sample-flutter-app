@@ -5,17 +5,17 @@ import 'package:sample_flutter_app/models/screen_data/main.dart';
 import 'package:sample_flutter_app/components/drawer/main.dart';
 
 class LayoutComponent extends StatelessWidget {
-  final ScreenDataModel data;
+  final ScreenDataModel args;
 
-  LayoutComponent(this.data) : super();
+  LayoutComponent({this.args}) : super();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(data.appBarTitle),
+          title: Text(args.appBarTitle),
         ),
         drawer: DrawerComponent(),
-        body: data.body);
+        body: args.body);
   }
 }

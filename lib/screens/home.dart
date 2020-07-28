@@ -61,13 +61,13 @@ class HomeScreen extends StatelessWidget {
                 ))
           ])));
     });
-
-    return LayoutComponent(ScreenDataModel(
-        appBarTitle: "Home",
-        body: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(vertical: 10),
-            child: Column(
-              children: listViewContainer,
-            ))));
+    return LayoutComponent(
+        args: ScreenDataModel(
+            appBarTitle: "Home",
+            body: SingleChildScrollView(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Column(
+                  children: listViewContainer,
+                ))));
   }
 }
