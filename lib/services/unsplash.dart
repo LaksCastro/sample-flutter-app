@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import "package:sample_flutter_app/models/image_data/main.dart";
 
 class UnsplashApi {
-  static final String baseUrl = "https://api.unsplash.com";
+  static final String _baseUrl = "https://api.unsplash.com";
   final String unsplashClientId;
 
   UnsplashApi({this.unsplashClientId});
@@ -14,7 +14,7 @@ class UnsplashApi {
   Future<List<ImageData>> Function({int page}) getByKeyword(String keyword) {
     String endpoint = "/search/photos";
 
-    String url = "${UnsplashApi.baseUrl}$endpoint";
+    String url = "${UnsplashApi._baseUrl}$endpoint";
 
     Future<List<ImageData>> getWithThisConfig({int page}) async {
       var response = await http.get("$url?page=$page&query=$keyword",
@@ -26,7 +26,7 @@ class UnsplashApi {
       data.forEach((result) {
         images.add(ImageData(
             id: result["id"],
-            url: result["urls"]["regular"],
+            url: result["urls"]["small"],
             color: result["color"],
             width: result["width"].toDouble(),
             height: result["height"].toDouble()));

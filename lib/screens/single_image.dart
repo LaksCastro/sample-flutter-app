@@ -14,7 +14,7 @@ class SingleImageScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacementNamed(context, "/second");
           },
-          child: Text("Go to second Screen"),
+          child: Text("Redirected..."),
         ))));
   }
 }

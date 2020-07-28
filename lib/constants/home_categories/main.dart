@@ -70,8 +70,7 @@ class Categories {
         label: "Endless",
         color: Colors.purple,
         builder: (context) => ImagesScreen(
-            args:
-                ImagesScreenArgs(query: "endless", title: "Endless Geometric")),
+            args: ImagesScreenArgs(query: "endless", title: "Endless")),
       ),
       _Item(
         label: "Abstract",
