@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sample_flutter_app/components/images_scrolling/main.dart';
+import 'package:sample_flutter_app/components/image_scrolling/main.dart';
 
 import 'package:sample_flutter_app/models/image_scrolling_args/main.dart';
 import 'package:sample_flutter_app/models/images_screen_args/main.dart';

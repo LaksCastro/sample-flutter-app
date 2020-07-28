@@ -24,9 +24,16 @@ class UnsplashApi {
       List<ImageData> images = [];
 
       data.forEach((result) {
+        var urls = result["urls"];
+
         images.add(ImageData(
             id: result["id"],
-            url: result["urls"]["small"],
+            url: ImageUrl(
+                full: urls["full"],
+                raw: urls["raw"],
+                regular: urls["regular"],
+                small: urls["small"],
+                thumb: urls["thumb"]),
             color: result["color"],
             width: result["width"].toDouble(),
             height: result["height"].toDouble()));

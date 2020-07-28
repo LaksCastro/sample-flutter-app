@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:sample_flutter_app/models/image_data/main.dart';
 import 'package:sample_flutter_app/models/image_scrolling_args/main.dart';
+import 'package:sample_flutter_app/models/single_image_screen_args/main.dart';
 import 'package:sample_flutter_app/screens/single_image.dart';
 import 'package:sample_flutter_app/services/unsplash.dart';
 
@@ -135,11 +136,19 @@ class _ImageScrollingState extends State<ImageScrolling> {
             mainAxisSpacing: 4,
             crossAxisSpacing: 4,
             padding: EdgeInsets.all(4),
-            children: List.generate(
-                _images.length,
-                (index) => _Tile(
-                      image: _images[index],
-                    )),
+            children: List.generate(_images.length, (index) {
+              return _Tile(
+                image: _images[index],
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SingleImageScreen(
+                              args: SingleImageScreenArgs(
+                                  image: _images[index], query: args.query))));
+                },
+              );
+            }),
           ));
 
     return body;
@@ -148,22 +157,20 @@ class _ImageScrollingState extends State<ImageScrolling> {
 
 class _Tile extends StatelessWidget {
   final ImageData image;
+  final void Function() onTap;
 
-  _Tile({this.image});
+  _Tile({this.image, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => SingleImageScreen()));
-        },
+        onTap: onTap,
         child: ClipRRect(
             borderRadius: BorderRadius.circular(5),
             child: CachedNetworkImage(
               fit: BoxFit.cover,
               placeholderFadeInDuration: Duration(milliseconds: 100),
-              imageUrl: image.url,
+              imageUrl: image.url.small,
               placeholder: (context, url) =>
                   Container(color: Utils.colorFromHexString(image.color)),
               errorWidget: (context, url, error) => Icon(Icons.error),
