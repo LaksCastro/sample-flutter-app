@@ -62,6 +62,6 @@ No secrets, only follow the [Flutter Docs Steps](https://flutter.dev/docs/deploy
 </p>
 <p align="center">This repository <a href="https://github.com/LaksCastro/sample-flutter-app/blob/master/LICENSE.md">is MIT licensed 💖</a></p>
 <p align="center">
-  <img src="/assets/pinterest.png" width="35" />
+  <img src="/assets/unsplash.png" width="35" />
   <img src="/assets/flutter.png" width="35" />
 </p>
