@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:sample_flutter_app/components/image_scrolling/main.dart';
 
 import 'package:sample_flutter_app/components/normal_layout/main.dart';
-import 'package:sample_flutter_app/models/image_scrolling_args/main.dart';
 
 import 'package:sample_flutter_app/models/screen_data/main.dart';
 import 'package:sample_flutter_app/models/single_image_screen_args/main.dart';
@@ -34,23 +33,23 @@ class SingleImageScreenState extends State<SingleImageScreen> {
   Widget build(BuildContext context) {
     Widget body = Container(
       child: Column(children: [
-        Flexible(
-          flex: 1,
-          fit: FlexFit.tight,
-          child: Container(
-              child: CachedNetworkImage(
-            fit: BoxFit.cover,
-            height: 500,
-            imageUrl: args.image.url.full,
-            placeholderFadeInDuration: Duration(milliseconds: 100),
-            fadeOutDuration: Duration(milliseconds: 100),
-            placeholder: (context, url) {
-              return Container(
-                  height: 500,
-                  color: Utils.colorFromHexString(args.image.color));
-            },
-          )),
-        ),
+        Container(
+            child: Container(
+                padding: EdgeInsets.all(5),
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(5),
+                    child: CachedNetworkImage(
+                      fit: BoxFit.contain,
+                      imageUrl: args.image.url.full,
+                      placeholderFadeInDuration: Duration(milliseconds: 100),
+                      fadeOutDuration: Duration(milliseconds: 100),
+                      placeholder: (context, url) {
+                        return Container(
+                            color: Utils.colorFromHexString(args.image.color),
+                            child: CachedNetworkImage(
+                                imageUrl: args.image.url.small));
+                      },
+                    )))),
         Flexible(
           flex: 1,
           fit: FlexFit.tight,

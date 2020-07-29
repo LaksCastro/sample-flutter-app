@@ -9,6 +9,7 @@ import "package:sample_flutter_app/theme/style.dart";
 
 void main() async {
   await DotEnv().load('.env');
+
   runApp(SampleFlutterApp());
 }
 

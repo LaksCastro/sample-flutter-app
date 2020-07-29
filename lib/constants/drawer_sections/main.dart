@@ -5,7 +5,6 @@ import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:sample_flutter_app/models/images_screen_args/main.dart';
 import 'package:sample_flutter_app/screens/images.dart';
 import 'package:sample_flutter_app/screens/home.dart';
-import 'package:sample_flutter_app/screens/settings.dart';
 
 class DrawerSections {
   static final List<_DrawerTabs> sections = [
@@ -14,10 +13,6 @@ class DrawerSections {
           label: "Home",
           icon: OMIcons.home,
           builder: (context) => HomeScreen()),
-      _Tab(
-          label: "Settings",
-          icon: OMIcons.settings,
-          builder: (context) => SettingsScreen()),
     ]),
     _DrawerTabs(
       title: "Explore",

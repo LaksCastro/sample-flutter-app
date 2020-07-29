@@ -81,7 +81,7 @@ class _ImageScrollingState extends State<ImageScrolling> {
     }
   }
 
-  int getColumnsLength(double screenWidth) {
+  int getColumnsLength(double screenSize) {
     int columnsLength = 0;
 
     Map<int, int> breakpoints = {
@@ -95,7 +95,7 @@ class _ImageScrollingState extends State<ImageScrolling> {
     };
 
     breakpoints.forEach((key, value) {
-      if (screenWidth > key && columnsLength == 0) {
+      if (screenSize > key && columnsLength == 0) {
         columnsLength = value;
       }
     });
@@ -125,8 +125,8 @@ class _ImageScrollingState extends State<ImageScrolling> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    int columnsLength = getColumnsLength(screenWidth);
+    double screenSize = MediaQuery.of(context).size.width;
+    int columnsLength = getColumnsLength(screenSize);
 
     Widget body = initialLoad
         ? Center(child: CircularProgressIndicator())
