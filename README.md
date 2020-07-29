@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/assets/pinterest.png" width="150">
+  <img src="/assets/unsplash.png" width="150">
   <img src="/assets/flutter.png" width="150">
 </p>
 
