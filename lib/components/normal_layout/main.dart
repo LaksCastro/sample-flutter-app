@@ -9,19 +9,10 @@ class NormalLayoutComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (args.floatingActionButton != null) {
-      return Scaffold(
-          appBar: AppBar(
-            title: Text(args.appBarTitle),
-          ),
-          body: args.body,
-          floatingActionButton: args.floatingActionButton);
-    } else {
-      return Scaffold(
-          appBar: AppBar(
-            title: Text(args.appBarTitle),
-          ),
-          body: args.body);
-    }
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(args.appBarTitle),
+        ),
+        body: args.body);
   }
 }

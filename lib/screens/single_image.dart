@@ -58,16 +58,10 @@ class SingleImageScreenState extends State<SingleImageScreen> {
       ]),
     );
 
-    Widget floatingActionButton = FloatingActionButton(
-      onPressed: () {},
-      child: Icon(Icons.file_download),
-    );
-
     return NormalLayoutComponent(
       args: ScreenDataModel(
           appBarTitle: "Image",
-          body: body,
-          floatingActionButton: floatingActionButton),
+          body: body),
     );
   }
 }
